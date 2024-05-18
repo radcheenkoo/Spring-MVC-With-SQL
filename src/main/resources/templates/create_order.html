@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Order</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Create New Order</h2>
+    <form th:action="@{/orders/create}" th:object="${orderDto}" method="post">
+        <div class="form-group">
+            <label for="tableNumber">Table Number:</label>
+            <input type="number" class="form-control" id="tableNumber" th:field="*{tableNumber}" required>
+        </div>
+        <div class="form-group">
+            <label for="startDate">Start Date and Time:</label>
+            <input type="datetime-local" class="form-control" id="startDate" th:field="*{startDate}" required>
+        </div>
+        <div class="form-group">
+            <label for="endDate">End Date and Time:</label>
+            <input type="datetime-local" class="form-control" id="endDate" th:field="*{endDate}" required>
+        </div>
+        <div class="form-group">
+            <label for="servingCode">Serving Code:</label>
+            <input type="text" class="form-control" id="servingCode" th:field="*{servingCode}" required>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumbClient">Client Phone Number:</label>
+            <input type="text" class="form-control" id="phoneNumbClient" th:field="*{phoneNumbClient}" required>
+        </div>
+        <div class="form-group">
+            <label for="clientName">Client Name:</label>
+            <input type="text" class="form-control" id="clientName" th:field="*{clientName}" required>
+        </div>
+        <div class="form-group">
+            <label for="deposit">Deposit:</label>
+            <input type="number" step="0.01" class="form-control" id="deposit" th:field="*{deposit}" required>
+        </div>
+        <div class="form-group">
+            <label for="managerCode">Manager Code:</label>
+            <input type="text" class="form-control" id="managerCode" th:field="*{managerCode}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Order</button>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
